@@ -2,13 +2,15 @@ package com.example.meenaclickmvp.ui
 
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.core.view.isGone
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
 import com.example.meenaclickmvp.R
+import com.example.meenaclickmvp.Utils.GridSpacingItemDecoration
+import com.example.meenaclickmvp.Utils.ScreenUtils
 import com.example.meenaclickmvp.model.CatalogProductsItem
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
@@ -39,12 +41,13 @@ class HomeFragment : Fragment(), HomeContract.View {
     }
 
     override fun setDataIntoAdapter(list: ArrayList<CatalogProductsItem>) {
-
+        val spaceSize = 13.00
         shimmer.stopShimmer()
         shimmer.visibility =  View.GONE
         recyclerView.visibility = View.VISIBLE
 
         recyclerView.layoutManager = GridLayoutManager(context, 2)
+        recyclerView.addItemDecoration(GridSpacingItemDecoration(2, ScreenUtils.dp2px(context, spaceSize.toFloat()),true))
         val adapter = HomeAdapter(list, this)
         recyclerView.adapter = adapter
     }

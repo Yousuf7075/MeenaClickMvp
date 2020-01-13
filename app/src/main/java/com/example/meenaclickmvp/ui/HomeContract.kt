@@ -10,4 +10,5 @@ class HomeContract {
     interface Presenter{
         fun receivedApiData()
     }
+
 }

@@ -9,7 +9,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.meenaclickmvp"
-        minSdkVersion 15
+        minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -50,4 +50,14 @@ dependencies {
 
     //shimmer
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    //https://github.com/MiguelCatalan/MaterialSearchView
+    implementation 'com.miguelcatalan:materialsearchview:1.4.0'
+    implementation 'com.google.android.material:material:1.0.0'
+
+    //https://github.com/intuit/sdp
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+    //https://github.com/intuit/ssp
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
 }
